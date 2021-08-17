@@ -18,7 +18,7 @@ namespace SampleApp.Modules.Mail
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
       containerRegistry.Register<IMailService, MailService>();
-      containerRegistry.RegisterInstance(typeof(MailViewViewModel));
+      containerRegistry.RegisterInstance(typeof(MailViewModel));
     }
   }
 }

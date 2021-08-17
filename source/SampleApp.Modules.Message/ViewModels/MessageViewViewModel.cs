@@ -1,4 +1,6 @@
-﻿namespace SampleApp.Modules.Message.ViewModels
+﻿using SampleApp.Common;
+
+namespace SampleApp.Modules.Message.ViewModels
 {
   public class MessageViewViewModel : ViewModelBase
   {

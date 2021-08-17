@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using SampleApp.Modules.Message.ViewModels;
+using SampleApp.Common;
 
 namespace SampleApp.Modules.Message
 {

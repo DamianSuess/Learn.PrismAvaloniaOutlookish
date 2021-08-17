@@ -1,4 +1,6 @@
-﻿namespace SampleApp.Modules.Calendar.ViewModels
+﻿using SampleApp.Common;
+
+namespace SampleApp.Modules.Calendar.ViewModels
 {
   public class CalendarViewViewModel : ViewModelBase
   {

@@ -7,12 +7,10 @@
              x:Class="SampleApp.Modules.Mail.Views.MailView"
              Background="Green"
              prism:ViewModelLocator.AutoWireViewModel="True">
-
-  <UserControl.DataContext>
-    <vm:MailViewViewModel />
-  </UserControl.DataContext>
-
   <Grid>
-    <ListBox Items="{Binding MailMessages}"></ListBox>
+    <StackPanel>
+      <TextBox Text="{Binding Greeting}" />
+      <ListBox Items="{Binding MailMessages}"></ListBox>
+    </StackPanel>
   </Grid>
 </UserControl>

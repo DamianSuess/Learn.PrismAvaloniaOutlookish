@@ -1,6 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using SampleApp.Common;
 using SampleApp.Modules.Calendar.ViewModels;
 
 namespace SampleApp.Modules.Calendar

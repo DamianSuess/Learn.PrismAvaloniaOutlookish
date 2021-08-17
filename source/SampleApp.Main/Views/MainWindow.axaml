@@ -10,10 +10,6 @@
         Title="SampleApp"
         prism:ViewModelLocator.AutoWireViewModel="True">
 
-  <Design.DataContext>
-    <vm:MainWindowViewModel />
-  </Design.DataContext>
-
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="1*"></ColumnDefinition>

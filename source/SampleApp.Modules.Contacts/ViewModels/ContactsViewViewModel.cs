@@ -1,4 +1,6 @@
-﻿namespace SampleApp.Modules.Contacts.ViewModels
+﻿using SampleApp.Common;
+
+namespace SampleApp.Modules.Contacts.ViewModels
 {
   public class ContactsViewViewModel : ViewModelBase
   {
