@@ -11,8 +11,7 @@ namespace SampleApp.Modules.Mail.ViewModels
 
     public MailViewModel(IMailService mailService)
     {
-      _mailService = new MailService();
-      // _mailService = mailService;
+      _mailService = mailService;
       MailMessages = new ObservableCollection<MailMessage>(_mailService.Messages);
     }
 

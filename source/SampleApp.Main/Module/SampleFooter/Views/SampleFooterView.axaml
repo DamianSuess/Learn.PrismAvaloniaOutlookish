@@ -7,6 +7,6 @@
              x:Class="SampleApp.Module.SampleFooter.Views.SampleFooterView"
              prism:ViewModelLocator.AutoWireViewModel="True">
   <Grid>
-    <TextBox Text="{Binding Message}" />
+    <TextBlock Text="{Binding Message}" />
   </Grid>
 </UserControl>

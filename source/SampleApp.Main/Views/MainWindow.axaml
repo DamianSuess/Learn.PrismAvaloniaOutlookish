@@ -1,14 +1,15 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:SampleApp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:core="clr-namespace:SampleApp.Common;assembly=SampleApp.Common"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:vm="using:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         x:Class="SampleApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SampleApp"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+        Title="SampleApp">
 
   <Grid>
     <Grid.ColumnDefinitions>
@@ -44,13 +45,14 @@
         <ColumnDefinition Width="3*"></ColumnDefinition>
         <ColumnDefinition Width="1*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <ContentControl Grid.Column="1" prism:RegionManager.RegionName="MailMessagesRegion" Background="Gray">
-      </ContentControl>
+      <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.LeftRegion}" Background="LightGray" />
+      <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.MailMessagesRegion}" Background="Gray" />
+      <ContentControl Grid.Column="2" prism:RegionManager.RegionName="{x:Static core:RegionNames.RightRegion}" Background="LightGray" />
     </Grid>
 
     <StackPanel
         Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
-        prism:RegionManager.RegionName="FooterRegion" Background="LightBlue">
+        prism:RegionManager.RegionName="{x:Static core:RegionNames.FooterRegion}" Background="LightBlue">
     </StackPanel>
   </Grid>
 </Window>

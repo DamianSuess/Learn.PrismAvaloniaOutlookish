@@ -1,6 +1,7 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using SampleApp.Common;
 using SampleApp.Modules.Calendar.Views;
 
 namespace SampleApp.Modules.Calendar
@@ -10,7 +11,7 @@ namespace SampleApp.Modules.Calendar
     public void OnInitialized(IContainerProvider containerProvider)
     {
       var regionManager = containerProvider.Resolve<IRegionManager>();
-      regionManager.RegisterViewWithRegion("CalendarView", typeof(CalendarView));
+      regionManager.RegisterViewWithRegion(RegionNames.LeftRegion, typeof(CalendarView));
     }
 
     public void RegisterTypes(IContainerRegistry containerRegistry)

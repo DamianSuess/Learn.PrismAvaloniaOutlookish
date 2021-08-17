@@ -1,6 +1,7 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using SampleApp.Common;
 using SampleApp.Modules.Contacts.Views;
 
 namespace SampleApp.Modules.Contacts
@@ -10,7 +11,7 @@ namespace SampleApp.Modules.Contacts
     public void OnInitialized(IContainerProvider containerProvider)
     {
       var regionManager = containerProvider.Resolve<IRegionManager>();
-      regionManager.RegisterViewWithRegion("ContactsView", typeof(ContactsView));
+      regionManager.RegisterViewWithRegion(RegionNames.RightRegion, typeof(ContactsView));
     }
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
