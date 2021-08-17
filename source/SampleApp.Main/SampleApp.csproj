@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.7" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
+    <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
+    <PackageReference Include="Prism.Unity.Avalonia" Version="7.2.0.1430" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Modules.Mail\SampleApp.Modules.Mail.csproj" />
+    <ProjectReference Include="..\SampleApp.Modules.Contacts\SampleApp.Modules.Contacts.csproj" />
+    <ProjectReference Include="..\SampleApp.Modules.Calendar\SampleApp.Modules.Calendar.csproj" />
+    <ProjectReference Include="..\SampleApp.Modules.Message\SampleApp.Modules.Message.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json</RestoreSources>
+  </PropertyGroup>
+</Project>

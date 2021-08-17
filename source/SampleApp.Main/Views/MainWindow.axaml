@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SampleApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SampleApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SampleApp"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*"></ColumnDefinition>
+      <ColumnDefinition Width="6*"></ColumnDefinition>
+      <ColumnDefinition Width="1*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="0.5*" />
+      <RowDefinition Height="8*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+      <DockPanel>
+        <Menu DockPanel.Dock="Top">
+          <MenuItem Header="_File">
+            <MenuItem Header="_Open..." />
+            <Separator />
+            <MenuItem Header="_Exit" />
+          </MenuItem>
+          <MenuItem Header="_Edit">
+            <MenuItem Header="Copy" />
+            <MenuItem Header="Paste" />
+          </MenuItem>
+        </Menu>
+      </DockPanel>
+    </Grid>
+
+    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"></ColumnDefinition>
+        <ColumnDefinition Width="3*"></ColumnDefinition>
+        <ColumnDefinition Width="1*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <ContentControl Grid.Column="1" prism:RegionManager.RegionName="MailMessagesRegion" Background="Gray">
+      </ContentControl>
+    </Grid>
+
+    <StackPanel
+        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+        prism:RegionManager.RegionName="FooterRegion" Background="LightBlue">
+    </StackPanel>
+  </Grid>
+</Window>
