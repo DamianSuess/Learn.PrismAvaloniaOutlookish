@@ -13,7 +13,7 @@ namespace SampleApp.Modules.Mail
     public void OnInitialized(IContainerProvider containerProvider)
     {
       var regionManager = containerProvider.Resolve<IRegionManager>();
-      regionManager.RegisterViewWithRegion(RegionNames.MailMessagesRegion, typeof(MailView));
+      regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(MailView));
     }
 
     public void RegisterTypes(IContainerRegistry containerRegistry)

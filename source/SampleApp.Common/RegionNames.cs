@@ -9,7 +9,7 @@
     public const string LeftRegion = "LeftRegion";
 
     /// <summary>Main Window's content region</summary>
-    public const string MailMessagesRegion = "MailMessagesRegion";
+    public const string ContentRegion = "ContentRegion";
 
     /// <summary>Right Side Bar.</summary>
     public const string RightRegion = "RightRegion";

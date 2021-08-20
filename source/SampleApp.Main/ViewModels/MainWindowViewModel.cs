@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using SampleApp.Common;
 using SampleApp.Main.Models;
 
 namespace SampleApp.ViewModels

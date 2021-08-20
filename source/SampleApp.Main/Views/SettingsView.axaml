@@ -3,10 +3,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SampleApp.Module.SampleFooter.Views.SampleFooterView"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+             x:Class="SampleApp.Views.SettingsView"
              prism:ViewModelLocator.AutoWireViewModel="True">
-  <Grid>
-    <TextBlock Text="{Binding Message}" />
-  </Grid>
+  <DockPanel>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+      <TextBlock Text="{Binding Title}" />
+      <TextBlock Text="Time to add some sample controls!" />
+    </StackPanel>
+  </DockPanel>
 </UserControl>

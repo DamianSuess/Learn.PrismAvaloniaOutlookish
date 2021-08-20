@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
+    <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="7.2.0.1430" />
   </ItemGroup>
 
 </Project>

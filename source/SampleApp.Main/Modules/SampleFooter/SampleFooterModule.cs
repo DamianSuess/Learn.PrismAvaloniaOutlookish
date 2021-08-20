@@ -2,10 +2,10 @@
 using Prism.Modularity;
 using Prism.Regions;
 using SampleApp.Common;
-using SampleApp.Module.SampleFooter.ViewModels;
-using SampleApp.Module.SampleFooter.Views;
+using SampleApp.Modules.SampleFooter.ViewModels;
+using SampleApp.Modules.SampleFooter.Views;
 
-namespace SampleApp.Module.SampleFooter
+namespace SampleApp.Modules.SampleFooter
 {
   public class SampleFooterModule : IModule
   {

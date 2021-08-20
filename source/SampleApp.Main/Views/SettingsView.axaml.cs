@@ -1,11 +1,12 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SampleApp.Module.SampleFooter.Views
+namespace SampleApp.Views
 {
-  public partial class SampleFooterView : UserControl
+  public partial class SettingsView : UserControl
   {
-    public SampleFooterView()
+    public SettingsView()
     {
       InitializeComponent();
     }

@@ -1,4 +1,6 @@
-﻿namespace SampleApp.Module.SampleFooter.ViewModels
+﻿using SampleApp.Common;
+
+namespace SampleApp.Modules.SampleFooter.ViewModels
 {
   public class SampleFooterViewModel : ViewModelBase
   {

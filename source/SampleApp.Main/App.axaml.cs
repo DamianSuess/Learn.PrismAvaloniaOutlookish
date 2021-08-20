@@ -5,12 +5,14 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
+using SampleApp.Common;
 using SampleApp.Main.Core.RegionAdapters;
-using SampleApp.Module.SampleFooter;
 using SampleApp.Modules.Calendar;
 using SampleApp.Modules.Contacts;
 using SampleApp.Modules.Mail;
 using SampleApp.Modules.Message;
+using SampleApp.Modules.SampleFooter;
+using SampleApp.ViewModels;
 using SampleApp.Views;
 
 namespace SampleApp
@@ -46,11 +48,26 @@ namespace SampleApp
       return this.Container.Resolve<MainWindow>();
     }
 
+    protected override void OnInitialized()
+    {
+      // Register Views to Region it will appear in. Don't register them in the ViewModel.
+      var regionManager = Container.Resolve<IRegionManager>();
+      regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(DashboardView));
+    }
+
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
+      // Services
+      // .
+
+      // Views - Generic
       containerRegistry.Register<MainWindow>();
       containerRegistry.Register<StackPanelRegionAdapter>();
       containerRegistry.Register<GridRegionAdapter>();
+
+      // Views - Region Navigation
+      containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
+      containerRegistry.RegisterForNavigation<SettingsView, SettingsViewModel>();
     }
   }
 }

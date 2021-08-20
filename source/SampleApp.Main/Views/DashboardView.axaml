@@ -1,17 +1,15 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             x:Class="SampleApp.Modules.Mail.Views.MailView"
-             Background="Green"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+             x:Class="SampleApp.Views.DashboardView"
              prism:ViewModelLocator.AutoWireViewModel="True">
-  <Grid>
-    <StackPanel>
-      <Button Content="Show Dashboard" Command="{Binding CommandShowDashboard}" />
-      <TextBox Text="{Binding Greeting}" />
-      <ListBox Items="{Binding MailMessages}"></ListBox>
+  <DockPanel>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+      <TextBlock Text="{Binding Title}" />
+      <TextBlock Text="Time to add some sample controls!" />
     </StackPanel>
-  </Grid>
+  </DockPanel>
 </UserControl>

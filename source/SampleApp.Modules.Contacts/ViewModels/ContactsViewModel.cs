@@ -2,7 +2,7 @@
 
 namespace SampleApp.Modules.Contacts.ViewModels
 {
-  public class ContactsViewViewModel : ViewModelBase
+  public class ContactsViewModel : ViewModelBase
   {
     public string Greeting => "Fake Contacts!";
   }

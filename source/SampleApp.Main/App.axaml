@@ -3,9 +3,6 @@
                         xmlns:local="using:SampleApp"
                         xmlns:prism="http://prismlibrary.com/"
                         x:Class="SampleApp.App">
-  <prism:PrismApplication.DataTemplates>
-    <local:ViewLocator />
-  </prism:PrismApplication.DataTemplates>
 
   <prism:PrismApplication.Styles>
     <FluentTheme Mode="Dark" />

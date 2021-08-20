@@ -2,7 +2,7 @@
 
 namespace SampleApp.Modules.Message.ViewModels
 {
-  public class MessageViewViewModel : ViewModelBase
+  public class MessageViewModel : ViewModelBase
   {
     public string Greeting => "Welcome to Avalonia!";
   }
