@@ -10,6 +10,8 @@
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
       <TextBlock Text="{Binding Title}" />
       <TextBlock Text="Time to add some sample controls!" />
+
+      <Button  Content="Notification" Command="{Binding CommandTestNotification}" />
     </StackPanel>
   </DockPanel>
 </UserControl>
