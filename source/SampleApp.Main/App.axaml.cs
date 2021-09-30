@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
-using Prism.Unity;
+using Prism.DryIoc;
 using SampleApp.Common;
 using SampleApp.Main.Core.RegionAdapters;
 using SampleApp.Modules.Calendar;
