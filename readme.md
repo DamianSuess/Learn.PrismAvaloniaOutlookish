@@ -18,15 +18,18 @@ First off, I'd like to give a shout out to the following for taking the time to 
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * [Prism Outlook](https://github.com/brianlagunas/PrismOutlook)
 
+Screenshot 
+![](Sample-Outlookish.png)
+
 ## Old Readme
 
 This project is a demonstration of using the AvaloniaUI library in conjunction with the Prism library which gives more architectural organisation through the project structure.
 
-here we'll explain the building blocks using to modularize the project, and how these parts work together.
+Here we'll explain the building blocks using to modularize the project, and how these parts work together.
 
 ### AvaloniaUI
 
-avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
+Avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
 
 Lets take a look to the code for integrating avalonia in a dotnet project:
 
