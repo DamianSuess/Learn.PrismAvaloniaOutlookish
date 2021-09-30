@@ -7,6 +7,7 @@ namespace SampleApp.ViewModels
 {
   public class DashboardViewModel : ViewModelBase
   {
+    private IRegionNavigationJournal? _journal;
     private IRegionManager _regionManager;
 
     public DashboardViewModel(IRegionManager regionManager)
@@ -16,10 +17,26 @@ namespace SampleApp.ViewModels
       Title = "Dashboard - No New Messages";
     }
 
-    public DelegateCommand CommandTestNotification => new DelegateCommand(() =>
+    public DelegateCommand CmdShowMail => new DelegateCommand(() =>
+    {
+      // Both methods work.
+      //  The 'GoBack' uses journaling, however if it is not possible
+      //  Prism will use the MailView which has been registered by the Mail module.
+      if (_journal != null && _journal.CanGoBack)
+        _journal.GoBack();
+      else
+        _regionManager.RequestNavigate(RegionNames.ContentRegion, "MailView");
+    });
+
+    public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
     {
       throw new NotImplementedException();
     });
+
+    public override void OnNavigatedTo(NavigationContext navigationContext)
+    {
+      _journal = navigationContext.NavigationService.Journal;
+    }
 
     /*
     private IRegionManager _regionManager;
