@@ -1,6 +1,6 @@
 # Learn Prism.Avalonia
 
-Get your feet wet with Prism.Avalonia v7.2 with this sample Modular Prism app.
+Get your feet wet with AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application.
 
 This project uses the following technologies
 
@@ -18,14 +18,9 @@ First off, I'd like to give a shout out to the following for taking the time to 
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * [Prism Outlook](https://github.com/brianlagunas/PrismOutlook)
 
-Screenshot 
+The screenshot below shows usage of the Prism's RegionManager and Modules in action. This project is no more than a mear sandbox for feature capabilities.
+
 ![](Sample-Outlookish.png)
-
-## Old Readme
-
-This project is a demonstration of using the AvaloniaUI library in conjunction with the Prism library which gives more architectural organisation through the project structure.
-
-Here we'll explain the building blocks using to modularize the project, and how these parts work together.
 
 ### AvaloniaUI
 
