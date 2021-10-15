@@ -9,6 +9,14 @@ This project uses the following technologies
 * .NET 5
 * WSL 2 - _with X11 rendering on Windows_
 
+## Samples
+
+| Project | Features |
+|-|-|
+| Outlookish | 4-panel application using external modules
+| Sidebar Panel | Simple sidebar with stages
+| Flyout menu | Alternative sidebar using Grids
+
 ## Special Thanks
 
 First off, I'd like to give a shout out to the following for taking the time to put together the basis for this exercise.
