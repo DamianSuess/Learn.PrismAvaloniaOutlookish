@@ -2,12 +2,10 @@
 
 Get your feet wet with AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application.
 
-This project uses the following technologies
+To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository.
 
-* Avalonia
-* [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
-* .NET 5
-* WSL 2 - _with X11 rendering on Windows_
+Author: [Damian Suess](https://www.linkedin.com/in/damiansuess/)<br />
+Website: [suesslabs.com](https://suesslabs.com)
 
 ## Samples
 
@@ -16,6 +14,15 @@ This project uses the following technologies
 | Outlookish | 4-panel application using external modules
 | Sidebar Panel | Simple sidebar with stages
 | Flyout menu | Alternative sidebar using Grids
+
+## Tech Stack
+
+This project uses the following technologies:
+
+* [Avalonia](https://github.com/AvaloniaUI/Avalonia)
+* [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
+* .NET 5
+* WSL 2 - _with X11 rendering on Windows_
 
 ## Special Thanks
 
