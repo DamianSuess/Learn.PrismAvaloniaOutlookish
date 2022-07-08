@@ -14,7 +14,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
     <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
-    <PackageReference Include="Prism.Unity.Avalonia" Version="7.2.0.1430" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />
@@ -25,5 +25,6 @@
   </ItemGroup>
   <PropertyGroup>
     <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json</RestoreSources>
+    <BaseOutputPath>..\..\output</BaseOutputPath>
   </PropertyGroup>
 </Project>

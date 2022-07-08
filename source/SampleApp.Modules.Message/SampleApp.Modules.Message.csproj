@@ -3,6 +3,7 @@
     <OutputType>library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>..\..\output</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
@@ -19,7 +20,6 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
     <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
-    <PackageReference Include="Prism.Unity.Avalonia" Version="7.2.0.1430" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />

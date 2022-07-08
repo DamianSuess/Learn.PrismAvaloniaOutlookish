@@ -1,13 +1,31 @@
 # Learn Prism.Avalonia
 
-Get your feet wet with Prism.Avalonia v7.2 with this sample Modular Prism app.
+Cross-platform Prism.Avalonia Outlookish sample application.
 
-This project uses the following technologies
+Get your feet wet using AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application. The application supports both Windows and Linux desktops (_yes, and WSL_).
 
-* Avalonia
+To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository.
+
+Author: [Damian Suess](https://www.linkedin.com/in/damiansuess/)<br />
+Website: [suesslabs.com](https://suesslabs.com)
+
+## Samples
+
+| Project | Features |
+|-|-|
+| Outlookish | 4-panel application using external modules
+| Sidebar Panel | Simple sidebar with stages
+| Flyout menu | Alternative sidebar using Grids
+
+## Tech Stack
+
+This project uses the following technologies:
+
+* [Avalonia](https://github.com/AvaloniaUI/Avalonia)
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * .NET 5
 * WSL 2 - _with X11 rendering on Windows_
+* [CodeDevOps](https://github.com/xenoinc/CodeDevOps) - _.NET code styling ruleset_.
 
 ## Special Thanks
 
@@ -18,15 +36,13 @@ First off, I'd like to give a shout out to the following for taking the time to 
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * [Prism Outlook](https://github.com/brianlagunas/PrismOutlook)
 
-## Old Readme
+The screenshot below shows usage of the Prism's RegionManager and Modules in action. This project is no more than a mear sandbox for feature capabilities.
 
-This project is a demonstration of using the AvaloniaUI library in conjunction with the Prism library which gives more architectural organisation through the project structure.
-
-here we'll explain the building blocks using to modularize the project, and how these parts work together.
+![](Sample-Outlookish.png)
 
 ### AvaloniaUI
 
-avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
+Avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
 
 Lets take a look to the code for integrating avalonia in a dotnet project:
 
@@ -113,3 +129,15 @@ where T : AppBuilderBase<T>, new()
 ```
 
 The same way the avalonia framework gives us the possibility to use specific UI mechanism based on the detected platform.
+
+## Future Considerations
+
+* Demonstrate page navigation with parameters - _use a `MockEmails` class to pass in EmailId and `OnNavigatedTo()` get email from `MailService`_
+  * Include successful navigation
+  * Include failed navigation (i.e. invalid EmailId)
+  * Use Prism's 'Navigation Journaling
+* Populate footer using Prism Events
+* Add icon glyphs via Styles
+* Use realistic color styles
+* Popup Notifications (_needs Prism.Avalonia v8_)
+* Upgrade to Prism.Avalonia v8.x when it becomes available
