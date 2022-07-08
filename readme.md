@@ -1,6 +1,8 @@
 # Learn Prism.Avalonia
 
-Get your feet wet with AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application.
+Cross-platform Prism.Avalonia Outlookish sample application.
+
+Get your feet wet using AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application. The application supports both Windows and Linux desktops (_yes, and WSL_).
 
 To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository.
 
@@ -23,6 +25,7 @@ This project uses the following technologies:
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * .NET 5
 * WSL 2 - _with X11 rendering on Windows_
+* [CodeDevOps](https://github.com/xenoinc/CodeDevOps) - _.NET code styling ruleset_.
 
 ## Special Thanks
 

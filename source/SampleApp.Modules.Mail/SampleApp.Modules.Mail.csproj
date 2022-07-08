@@ -3,6 +3,7 @@
     <OutputType>library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>..\..\output</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
