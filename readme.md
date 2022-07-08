@@ -1,4 +1,4 @@
-# Learn Prism.Avalonia
+# Learn Prism.Avalonia with Outlookish
 
 Cross-platform Prism.Avalonia Outlookish sample application.
 
