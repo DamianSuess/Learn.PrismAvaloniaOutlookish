@@ -1,21 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.6.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp", "src-outlookish\SampleApp.Main\SampleApp.csproj", "{387AE2CD-42D9-4F48-9F44-86708BE7208F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp", "source\SampleApp.Main\SampleApp.csproj", "{387AE2CD-42D9-4F48-9F44-86708BE7208F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Contacts", "src-outlookish\SampleApp.Modules.Contacts\SampleApp.Modules.Contacts.csproj", "{0B2ACB71-744B-465F-BBB5-E5DF0E712143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Contacts", "source\SampleApp.Modules.Contacts\SampleApp.Modules.Contacts.csproj", "{0B2ACB71-744B-465F-BBB5-E5DF0E712143}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Calendar", "src-outlookish\SampleApp.Modules.Calendar\SampleApp.Modules.Calendar.csproj", "{032DA6CE-01C2-4B6B-B762-3DCF2006DF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Calendar", "source\SampleApp.Modules.Calendar\SampleApp.Modules.Calendar.csproj", "{032DA6CE-01C2-4B6B-B762-3DCF2006DF2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Mail", "src-outlookish\SampleApp.Modules.Mail\SampleApp.Modules.Mail.csproj", "{224A3A32-AC4E-4487-BC2C-B5969B39CDFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Mail", "source\SampleApp.Modules.Mail\SampleApp.Modules.Mail.csproj", "{224A3A32-AC4E-4487-BC2C-B5969B39CDFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Message", "src-outlookish\SampleApp.Modules.Message\SampleApp.Modules.Message.csproj", "{E338CD52-7BDF-42D9-80FE-8ACDC9C3B4BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Modules.Message", "source\SampleApp.Modules.Message\SampleApp.Modules.Message.csproj", "{E338CD52-7BDF-42D9-80FE-8ACDC9C3B4BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{93827707-8DE9-423D-8397-644842DE664F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Common", "src-outlookish\SampleApp.Common\SampleApp.Common.csproj", "{DD4D096C-60C0-42DA-B160-DF2C584CB6BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp.Common", "source\SampleApp.Common\SampleApp.Common.csproj", "{DD4D096C-60C0-42DA-B160-DF2C584CB6BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2726DE72-061E-4E27-8DEB-A3CE6AAC4398}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		CodeMaid.config = CodeMaid.config
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

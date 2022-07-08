@@ -126,3 +126,15 @@ where T : AppBuilderBase<T>, new()
 ```
 
 The same way the avalonia framework gives us the possibility to use specific UI mechanism based on the detected platform.
+
+## Future Considerations
+
+* Demonstrate page navigation with parameters - _use a `MockEmails` class to pass in EmailId and `OnNavigatedTo()` get email from `MailService`_
+  * Include successful navigation
+  * Include failed navigation (i.e. invalid EmailId)
+  * Use Prism's 'Navigation Journaling
+* Populate footer using Prism Events
+* Add icon glyphs via Styles
+* Use realistic color styles
+* Popup Notifications (_needs Prism.Avalonia v8_)
+* Upgrade to Prism.Avalonia v8.x when it becomes available
