@@ -1,21 +1,15 @@
 # Learn Prism.Avalonia with Outlookish
 
-Cross-platform Prism.Avalonia Outlookish sample application.
+Cross-platform Prism.Avalonia Outlookish sample application featuring a 4-panel application using external modules, and Avalonia Notifications.  This app helps get your feet wet using AvaloniaUI with [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v8.1.97!
 
-Get your feet wet using AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v8.1.97 Modules with this sample 4-panel application. The application supports both Windows and Linux desktops (_yes, and WSL_).
-
-To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository.
+To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository to expore more about using Prism with Xamarin.Forms, MAUI, UNO, WPF, and Avalonia.
 
 Author: [Damian Suess](https://www.linkedin.com/in/damiansuess/)<br />
 Website: [suesslabs.com](https://suesslabs.com)
 
-## Samples
+The screenshot below shows usage of the Prism's Region Manager, Modules, Dialogs and Notifications in action!
 
-| Project | Features |
-|-|-|
-| Outlookish | 4-panel application using external modules, and Avalonia Notifications
-| Sidebar Panel | Simple sidebar with stages
-| Flyout menu | Alternative sidebar using Grids
+![Screen Shot](Sample-Outlookish-Annotated.png)
 
 ## Tech Stack
 
@@ -27,18 +21,14 @@ This project uses the following technologies:
 * WSL 2 - _with X11 rendering on Windows_
 * [CodeDevOps](https://github.com/xenoinc/CodeDevOps) - _.NET code styling ruleset_.
 
-## Special Thanks
+### Special Thanks
 
-First off, I'd like to give a shout out to the following for taking the time to put together the basis for this exercise.
+First off, I'd like to give a shout out to the following folks for taking the time to put together the basis for this exercise.
 
 * [PrismLibrary](https://prismlibrary.com/) - Forged from from Microsoft PnP "Patterns and practices" team.
-* [AvaloniaMvvm](https://github.com/mouadcherkaoui/AvaloniaMvvm-prism)
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 * [Prism Outlook](https://github.com/brianlagunas/PrismOutlook)
-
-The screenshot below shows usage of the Prism's RegionManager and Modules in action. This project is no more than a mear sandbox for feature capabilities.
-
-![Screen Shot](Sample-Outlookish.png)
+* [AvaloniaMvvm](https://github.com/mouadcherkaoui/AvaloniaMvvm-prism)
 
 ## Avalonia Notifications
 
@@ -233,4 +223,5 @@ The same way the avalonia framework gives us the possibility to use specific UI 
   * Use Prism's 'Navigation Journaling
 * Populate footer using Prism Events
 * Add icon glyphs via Styles
-* Use realistic color styles
+* Sidebar Panel - Simple sidebar with stages
+* Flyout menu -  Alternative sidebar using Grids
