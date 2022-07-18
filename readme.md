@@ -38,19 +38,82 @@ First off, I'd like to give a shout out to the following for taking the time to 
 
 The screenshot below shows usage of the Prism's RegionManager and Modules in action. This project is no more than a mear sandbox for feature capabilities.
 
-![](Sample-Outlookish.png)
+![Screen Shot](Sample-Outlookish.png)
 
-## Under The Hood
+## Avalonia Notifications
 
-### Avalonia Notifications
+To access Avalonia's Notification pop-ups, there are currently 2 methods used in this sample codebase. 1st one is Dependency Inejection and the 2nd is to use a `static class`.
 
-First, you have to configure Avalonia's `WindowNotificationManager` in the MainWindow before it is created. To do this we'll use our static helper class, `NotificationHelpers`.
+You can't use the notification window right away. Ref: [https://github.com/AvaloniaUI/Avalonia/issues/5442]
+
+Another methodology (_not outlined here_) is to create a View `Behavior` so that the `WindowNotificationManager` can be registered via XAML in our View, `MainWindow.axml`. This method is currently being used by [Wasabi Wallett](https://github.com/zkSNACKs/WalletWasabi/blob/master/WalletWasabi.Fluent/Views/MainWindow.axaml).
+
+### Method 1 - ViewModel Dependency Injection
+
+To enhance this in the future we could create a `NotificationService` service via Prism DI.
+
+1. Wire-up the INotificationService in the `App.axml.cs`
+2. Configure notifications in the `MainWindow.axml.cs`'s constructor.
+   1. all our `NotificationService.SetHostWindow(this);`
+   2. This can be done via accessing Prism's IContainerRegistry from the `MainWindow.axml.cs` file
+3. Next, add `INotificationService` to the desired ViewModel's constructor
+4. Finally, call the service
+   1. `_notificationService.Show("title", "message here");`
+   2. `_notificationService.Show("title", "message here", () => { ... });`
+
+Step 2) `MainWindow.axml.cs`
+
+```cs
+public MainWindow()
+{
+    InitializeComponent();
+
+    // Access the Container's INotificationService and configure our Host Window
+    var notifyService = ContainerLocator.Current.Resolve<INotificationService>();
+    notifyService.SetHostWindow(this);
+}
+```
+
+Step 3) `DashboardViewModel.cs`
+
+```cs
+  public class DashboardViewModel : ViewModelBase
+  {
+    private readonly INotificationService _notificationService;
+
+    public DashboardViewModel(INotificationService notifyService)
+    {
+      _notificationService = notifyService;
+    }
+
+    public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
+    {
+      _notificationService.Show("Hello 2", "I'm from DI Service!");
+    });
+  }
+```
+
+Interface:
+
+```cs
+// INotificationService.cs
+public interface INotificationService
+{
+    int NotificationTimeout { get; set; }
+    void SetHostWindow(Window window);
+    void Show(string title, string message, Action? onClick = null);
+}
+```
+
+### Method 2 - Static Class
+
+In the `static class` methodology, you can access the Notification pop-ups via the `NotificationHelpers` class. This way, you don't have wire up any DI Services. Simply configure in the MainWindow's constructor and call it from anywhere.
 
 ```cs
 // MainWindow.axml.cs
 public MainWindow()
 {
-    ...
+    InitializeComponent();
     NotificationHelpers.SetNotificationManager(this);
 }
 ```
@@ -70,55 +133,11 @@ public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
 });
 ```
 
-#### Notification - Future Improvements
-
-To enhance this in the future we could create a `NotificationService` service via Prism DI.
-
-1. To wire-up Notifications, we'll need to access Prism v8.1's ContainerLocator.
-2. Next, call our `NotificationService.SetHostWindow(this);`
-   1. This can be done via accessing Prism's IContainerRegistry from the `MainWindow.axml.cs` file
-   2. or, create a new `Behavior` so it can be registered via XAML in our View, `MainWindow.axml`
-3. Access the INotificationService via Dependency Injection from our ViewModel
-4. Finally, call the service
-   1. `_notificationService.Show("title", "message here");`
-   2. `_notificationService.Show("title", "message here", () => { ... });`
-
-```cs
-// NotificationService.cs
-public class NotificationService : INotificationService
-{
-    private int _notificationTimeout = 10;
-    private WindowNotificationManager? _notificationManager;
-
-    public void SetHostWindow(Avalonia.Controls.Window window)
-    {
-      _notificationManager = window;
-    }
-
-    public static void Show(string title, string message, Action? onClick = null)
-    {
-      if (_notificationManager is { } nm)
-      {
-        RxApp.MainThreadScheduler.Schedule(() =>
-        {
-          nm.Show(
-            new Notification(
-              title,
-              message,
-              NotificationType.Information,
-              TimeSpan.FromSeconds(DefaultNotificationTimeout),
-              onClick));
-        });
-      }
-    }
-}
-```
-
-### AvaloniaUI
+## AvaloniaUI
 
 Avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
 
-#### Avalonia Deep-Dive
+### Avalonia Deep-Dive
 
 Lets take a look to the code for integrating avalonia in a dotnet project:
 

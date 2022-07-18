@@ -4,12 +4,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             x:Class="SampleApp.Modules.Message.Views.MessageView"
-             prism:ViewModelLocator.AutoWireViewModel="True">
-
-  <Design.DataContext>
-    <vm:MessageViewViewModel />
-  </Design.DataContext>
-
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:Class="SampleApp.Modules.Message.Views.MessageView">
+  <StackPanel>
+    <TextBlock Text="{Binding Greeting}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+  </StackPanel>
 </UserControl>

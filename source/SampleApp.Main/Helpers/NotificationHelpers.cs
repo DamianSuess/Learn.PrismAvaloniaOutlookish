@@ -30,6 +30,8 @@ namespace SampleApp.Helpers
 
     public static void Show(string title, string message, Action? onClick = null)
     {
+      // Calls Avalonia's, IManagedNotificationManager.Show(object)
+
       if (_notificationManager is { } nm)
       {
         RxApp.MainThreadScheduler.Schedule(() =>
