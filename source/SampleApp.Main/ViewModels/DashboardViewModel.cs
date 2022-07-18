@@ -1,18 +1,22 @@
-﻿using System;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using SampleApp.Common;
+using SampleApp.Helpers;
+using SampleApp.Views;
 
 namespace SampleApp.ViewModels
 {
   public class DashboardViewModel : ViewModelBase
   {
+    private readonly IDialogService _dialogService;
     private IRegionNavigationJournal? _journal;
     private IRegionManager _regionManager;
 
-    public DashboardViewModel(IRegionManager regionManager)
+    public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService)
     {
       _regionManager = regionManager;
+      _dialogService = dialogService;
 
       Title = "Dashboard - No New Messages";
     }
@@ -30,7 +34,11 @@ namespace SampleApp.ViewModels
 
     public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
     {
-      throw new NotImplementedException();
+      // Hard-Coded singleton ability to show notification (NON-DI approach)
+      NotificationHelpers.Show("Hello", "Im a message", () =>
+      {
+        _dialogService.ShowDialog(nameof(NoticeDialogView));
+      });
     });
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
