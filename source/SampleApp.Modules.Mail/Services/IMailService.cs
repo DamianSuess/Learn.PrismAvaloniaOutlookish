@@ -7,7 +7,7 @@ namespace SampleApp.Modules.Mail.Services
   {
     IEnumerable<MailMessage> Messages { get; set; }
 
-    void GetMessages(string folder);
+    void GetMessages(int messageId);
 
     void Send(MailMessage message);
   }

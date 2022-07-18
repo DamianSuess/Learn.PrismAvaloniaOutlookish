@@ -8,14 +8,14 @@ namespace SampleApp.ViewModels
   public class NoticeDialogViewModel : BindableBase, IDialogAware
   {
     private string _title = "";
-    private string _message;
+    private string _message = "This feature is not implemented";
 
     public NoticeDialogViewModel()
     {
       Title = "Notice";
     }
 
-    public event Action<IDialogResult> RequestClose;
+    public event Action<IDialogResult>? RequestClose;
 
     public DelegateCommand<string> CmdResult => new DelegateCommand<string>((param) =>
     {

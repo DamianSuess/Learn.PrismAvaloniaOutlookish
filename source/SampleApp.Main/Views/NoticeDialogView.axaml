@@ -16,7 +16,7 @@
   
   <StackPanel HorizontalAlignment="Center">
     <Label Content="Notice" FontWeight="Bold" />
-    <Label Content="This feature is not implemented." />
+    <Label Content="{Binding Message}" />
 
     <Button Content="OK" Command="{Binding CmdResult}" />
   </StackPanel>

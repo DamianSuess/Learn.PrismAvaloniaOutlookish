@@ -14,6 +14,7 @@ using SampleApp.Modules.Message;
 using SampleApp.Modules.SampleFooter;
 using SampleApp.ViewModels;
 using SampleApp.Views;
+using SampleApp.Services;
 
 namespace SampleApp
 {
@@ -58,7 +59,7 @@ namespace SampleApp
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
       // Services
-      // .
+      containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 
       // Views - Dialogs
       containerRegistry.RegisterDialog<NoticeDialogView, NoticeDialogViewModel>();

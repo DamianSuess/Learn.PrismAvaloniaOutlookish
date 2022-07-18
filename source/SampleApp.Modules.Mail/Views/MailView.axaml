@@ -4,14 +4,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             x:Class="SampleApp.Modules.Mail.Views.MailView"
-             Background="Green"
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:Class="SampleApp.Modules.Mail.Views.MailView">
+  <UserControl.Styles>
+  <Style Selector="Border.ControlBorder">
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="Background" Value="GhostWhite" />
+    <Setter Property="BorderBrush" Value="Gainsboro" />
+    <Setter Property="CornerRadius" Value="3,3" />
+    <Setter Property="Margin" Value="5" />
+  </Style>
+  </UserControl.Styles>
   <Grid>
     <StackPanel>
-      <Button Content="Show Dashboard" Command="{Binding CommandShowDashboard}" />
-      <TextBox Text="{Binding Greeting}" />
-      <ListBox Items="{Binding MailMessages}"></ListBox>
+      <Button Content="&lt; Dashboard" Command="{Binding CommandShowDashboard}" />
+
+      <Label Content="{Binding Greeting}" />
+
+      <Border Grid.Column="0" Classes="ControlBorder">
+        <ListBox Items="{Binding MailMessages}"
+                 SelectionMode="Single"
+                 Margin="2"
+                 ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible">
+          <ListBox.DataTemplates>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="From:" FontWeight="Bold" />
+                <TextBlock Text="{Binding From}" />
+                <TextBlock Text=" - " />
+                <TextBlock Text="{Binding Subject}" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.DataTemplates>
+        </ListBox>
+      </Border>
     </StackPanel>
   </Grid>
 </UserControl>
