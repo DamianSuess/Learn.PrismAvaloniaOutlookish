@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:vm="using:SampleApp.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
         prism:ViewModelLocator.AutoWireViewModel="True"
         x:Class="SampleApp.Views.MainWindow"
+        x:Name="MainShellWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="SampleApp">
 
@@ -27,13 +28,14 @@
       <DockPanel>
         <Menu DockPanel.Dock="Top">
           <MenuItem Header="_File">
-            <MenuItem Header="_Open..." />
+            <MenuItem Header="_Open..." Command="{Binding CmdNotImplemented}" />
             <Separator />
-            <MenuItem Header="_Exit" />
+            <MenuItem Header="_Exit via App Shutdown" Command="{Binding CmdMenuExitAppLifetime}" />
+            <MenuItem Header="_Exit via Window" Command="{Binding CmdMenuExitWindow}" CommandParameter="{Binding ElementName=MainShellWindow}" />
           </MenuItem>
           <MenuItem Header="_Edit">
-            <MenuItem Header="Copy" />
-            <MenuItem Header="Paste" />
+            <MenuItem Header="Copy" Command="{Binding CmdNotImplemented}" />
+            <MenuItem Header="Paste" Command="{Binding CmdNotImplemented}" />
           </MenuItem>
         </Menu>
       </DockPanel>

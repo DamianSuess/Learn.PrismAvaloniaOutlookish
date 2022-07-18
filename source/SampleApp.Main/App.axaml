@@ -5,6 +5,7 @@
                         x:Class="SampleApp.App">
 
   <prism:PrismApplication.Styles>
-    <FluentTheme Mode="Dark" />
+    <FluentTheme Mode="Light" />
+    <!--<FluentTheme Mode="Dark" />-->
   </prism:PrismApplication.Styles>
 </prism:PrismApplication>
