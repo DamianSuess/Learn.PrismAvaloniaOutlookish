@@ -6,10 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.7" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
-    <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="7.2.0.1430" />
+    <PackageReference Include="Avalonia" Version="0.10.16" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.16" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97" />
   </ItemGroup>
 
 </Project>

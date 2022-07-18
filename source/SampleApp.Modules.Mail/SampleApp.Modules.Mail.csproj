@@ -10,11 +10,11 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.7" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.7" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
-    <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
+    <PackageReference Include="Avalonia" Version="0.10.16" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.16" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.16" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.16" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />

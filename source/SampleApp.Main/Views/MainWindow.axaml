@@ -8,6 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         prism:ViewModelLocator.AutoWireViewModel="True"
         x:Class="SampleApp.Views.MainWindow"
+        x:Name="MainShellWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="SampleApp">
 
@@ -29,7 +30,8 @@
           <MenuItem Header="_File">
             <MenuItem Header="_Open..." />
             <Separator />
-            <MenuItem Header="_Exit" />
+            <MenuItem Header="_Exit via App Shutdown" Command="{Binding CmdMenuExitAppLifetime}" />
+            <MenuItem Header="_Exit via Window" Command="{Binding CmdMenuExitWindow}" CommandParameter="{Binding ElementName=MainShellWindow}" />
           </MenuItem>
           <MenuItem Header="_Edit">
             <MenuItem Header="Copy" />
