@@ -2,7 +2,7 @@
 
 Cross-platform Prism.Avalonia Outlookish sample application.
 
-Get your feet wet using AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v7.2 Modules with this sample 4-panel application. The application supports both Windows and Linux desktops (_yes, and WSL_).
+Get your feet wet using AvaloniaUI and [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) v8.1.97 Modules with this sample 4-panel application. The application supports both Windows and Linux desktops (_yes, and WSL_).
 
 To enjoy more Prism samples, check out my [Learn Prism](https://github.com/DamianSuess/Learn.PrismLibrary) repository.
 
@@ -13,7 +13,7 @@ Website: [suesslabs.com](https://suesslabs.com)
 
 | Project | Features |
 |-|-|
-| Outlookish | 4-panel application using external modules
+| Outlookish | 4-panel application using external modules, and Avalonia Notifications
 | Sidebar Panel | Simple sidebar with stages
 | Flyout menu | Alternative sidebar using Grids
 
@@ -40,9 +40,85 @@ The screenshot below shows usage of the Prism's RegionManager and Modules in act
 
 ![](Sample-Outlookish.png)
 
+## Under The Hood
+
+### Avalonia Notifications
+
+First, you have to configure Avalonia's `WindowNotificationManager` in the MainWindow before it is created. To do this we'll use our static helper class, `NotificationHelpers`.
+
+```cs
+// MainWindow.axml.cs
+public MainWindow()
+{
+    ...
+    NotificationHelpers.SetNotificationManager(this);
+}
+```
+
+To call the pop-up notifications in your ViewModel simple perform the following:
+
+```cs
+// DashboardViewModel.cs
+public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
+{
+  NotificationHelpers.Show("Hello", "Im a message", () =>
+  {
+    // Some action to take when the Notification is clicked
+    //  i.e.
+    // _dialogService.ShowDialog(nameof(NoticeDialogView));
+  });
+});
+```
+
+#### Notification - Future Improvements
+
+To enhance this in the future we could create a `NotificationService` service via Prism DI.
+
+1. To wire-up Notifications, we'll need to access Prism v8.1's ContainerLocator.
+2. Next, call our `NotificationService.SetHostWindow(this);`
+   1. This can be done via accessing Prism's IContainerRegistry from the `MainWindow.axml.cs` file
+   2. or, create a new `Behavior` so it can be registered via XAML in our View, `MainWindow.axml`
+3. Access the INotificationService via Dependency Injection from our ViewModel
+4. Finally, call the service
+   1. `_notificationService.Show("title", "message here");`
+   2. `_notificationService.Show("title", "message here", () => { ... });`
+
+```cs
+// NotificationService.cs
+public class NotificationService : INotificationService
+{
+    private int _notificationTimeout = 10;
+    private WindowNotificationManager? _notificationManager;
+
+    public void SetHostWindow(Avalonia.Controls.Window window)
+    {
+      _notificationManager = window;
+    }
+
+    public static void Show(string title, string message, Action? onClick = null)
+    {
+      if (_notificationManager is { } nm)
+      {
+        RxApp.MainThreadScheduler.Schedule(() =>
+        {
+          nm.Show(
+            new Notification(
+              title,
+              message,
+              NotificationType.Information,
+              TimeSpan.FromSeconds(DefaultNotificationTimeout),
+              onClick));
+        });
+      }
+    }
+}
+```
+
 ### AvaloniaUI
 
 Avalonia-ui is a library that gives WPFs like features designed to run cross platform by using platform detection and switching to use platform specific apis to be able to render the ui and its components, for example at startup the project detects if the application is running in a linux environment with a X Window System X11 "graphic protocol" at a low level and for example GTK+ or QT "graphical components libraries" at a higher level, the avalonia switch to using the X11 apis to render its components.
+
+#### Avalonia Deep-Dive
 
 Lets take a look to the code for integrating avalonia in a dotnet project:
 
@@ -139,5 +215,3 @@ The same way the avalonia framework gives us the possibility to use specific UI 
 * Populate footer using Prism Events
 * Add icon glyphs via Styles
 * Use realistic color styles
-* Popup Notifications (_needs Prism.Avalonia v8_)
-* Upgrade to Prism.Avalonia v8.x when it becomes available

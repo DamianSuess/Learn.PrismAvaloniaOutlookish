@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Markup.Xaml;
 using Prism.Ioc;
+using SampleApp.Helpers;
 
 namespace SampleApp.Views
 {
@@ -27,14 +28,21 @@ namespace SampleApp.Views
 
     private void InitNotifications()
     {
-      // SAMPLE Avalonia Notifications
-      // To wire-up Notifications, we'll need Prism 8.1 to access ContainerLocator.
+      // NOTES:
+      //  You can't use the notification window right away
+      //  Ref: https://github.com/AvaloniaUI/Avalonia/issues/5442
+      //
+      // Config:
+      //  - Position: BottomRight
+      //  - MaxItems: 4
+      NotificationHelpers.SetNotificationManager(this);
 
-      _notificationArea = new WindowNotificationManager(this) {
-        Position = NotificationPosition.TopRight,
-        MaxItems = 3
-      };
-
+      // ======================================
+      // Sandbox Code for DI Notifications
+      //
+      // 1) To wire-up Notifications, we'll need to access Prism v8.1's ContainerLocator.
+      // 2) Next, call our `NotificationService.SetHostWindow(this);`
+      // --------------------------------------
       // Try #3 - 
       //// // Register object with default constructor
       //// //  - https://prismlibrary.com/docs/dependency-injection/registering-types.html

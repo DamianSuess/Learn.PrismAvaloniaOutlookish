@@ -12,7 +12,9 @@
       <TextBlock Text="Time to add some sample controls!" />
 
       <Button Content="Show Mail" Command="{Binding CmdShowMail}" />
-      <Button Content="Test Notification (Coming Soon to Prism.Avalonia v8.1)" Command="{Binding CmdTestNotification}" IsEnabled="False" />
+      <Button Content="Test Notification (Coming Soon to Prism.Avalonia v8.1)"
+              Command="{Binding CmdTestNotification}"
+              IsEnabled="True" />
     </StackPanel>
   </DockPanel>
 </UserControl>
