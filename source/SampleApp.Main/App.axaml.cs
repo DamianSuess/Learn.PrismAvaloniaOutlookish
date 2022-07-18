@@ -60,6 +60,9 @@ namespace SampleApp
       // Services
       // .
 
+      // Views - Dialogs
+      containerRegistry.RegisterDialog<NoticeDialogView, NoticeDialogViewModel>();
+
       // Views - Generic
       containerRegistry.Register<MainWindow>();
       containerRegistry.Register<StackPanelRegionAdapter>();

@@ -2,16 +2,21 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Prism.Commands;
+using Prism.Services.Dialogs;
 using SampleApp.Common;
 using SampleApp.Main.Models;
+using SampleApp.Views;
 using MenuItem = SampleApp.Main.Models.MenuItem;
 
 namespace SampleApp.ViewModels
 {
   public class MainWindowViewModel : ViewModelBase
   {
-    public MainWindowViewModel()
+    private readonly IDialogService _dialogService;
+
+    public MainWindowViewModel(IDialogService dialogService)
     {
+      _dialogService = dialogService;
     }
 
     public string Greeting => "Welcome to Avalonia!";
@@ -50,6 +55,14 @@ namespace SampleApp.ViewModels
       //  and perform the same action below.
 
       win?.Close();
+    });
+
+    public DelegateCommand CmdNotImplemented => new DelegateCommand(() =>
+    {
+      _dialogService.ShowDialog(nameof(NoticeDialogView), result =>
+      {
+        // do nothing.
+      });
     });
   }
 }
