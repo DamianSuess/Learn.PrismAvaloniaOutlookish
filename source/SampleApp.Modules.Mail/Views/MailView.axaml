@@ -1,44 +1,55 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True"
-             x:Class="SampleApp.Modules.Mail.Views.MailView">
+             xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
+             x:Class="SampleApp.Modules.Mail.Views.MailView"
+             prism:ViewModelLocator.AutoWireViewModel="True">
   <UserControl.Styles>
-  <Style Selector="Border.ControlBorder">
-    <Setter Property="BorderThickness" Value="2" />
-    <Setter Property="Background" Value="GhostWhite" />
-    <Setter Property="BorderBrush" Value="Gainsboro" />
-    <Setter Property="CornerRadius" Value="3,3" />
-    <Setter Property="Margin" Value="5" />
-  </Style>
+    <Style Selector="Border.ControlBorder">
+      <Setter Property="BorderThickness" Value="2" />
+      <Setter Property="Background" Value="GhostWhite" />
+      <Setter Property="BorderBrush" Value="Gainsboro" />
+      <Setter Property="CornerRadius" Value="3,3" />
+      <Setter Property="Margin" Value="5" />
+    </Style>
   </UserControl.Styles>
-  <Grid>
-    <StackPanel>
-      <Button Content="&lt; Dashboard" Command="{Binding CommandShowDashboard}" />
+  <Grid RowDefinitions="Auto,*">
 
-      <Label Content="{Binding Greeting}" />
-
-      <Border Grid.Column="0" Classes="ControlBorder">
-        <ListBox Items="{Binding MailMessages}"
-                 SelectionMode="Single"
-                 Margin="2"
-                 ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                 ScrollViewer.VerticalScrollBarVisibility="Visible">
-          <ListBox.DataTemplates>
-            <DataTemplate>
-              <StackPanel Orientation="Horizontal" Spacing="5">
-                <TextBlock Text="From:" FontWeight="Bold" />
-                <TextBlock Text="{Binding From}" />
-                <TextBlock Text=" - " />
-                <TextBlock Text="{Binding Subject}" />
-              </StackPanel>
-            </DataTemplate>
-          </ListBox.DataTemplates>
-        </ListBox>
-      </Border>
+    <StackPanel Orientation="Horizontal" Spacing="5">
+      <Button Command="{Binding CommandShowDashboard}" Content="&lt; Dashboard" />
+      <Label Content="{Binding Greeting}" FontWeight="Bold" VerticalAlignment="Center" />
     </StackPanel>
+    
+    <Grid Grid.Row="1">
+      <Border Grid.Column="0" Classes="ControlBorder">
+
+        <TabControl>
+          <TabItem Header="Focused">
+            <ListBox Margin="2"
+                     Items="{Binding MailMessages}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     SelectionMode="Single">
+              <ListBox.DataTemplates>
+                <DataTemplate>
+                  <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock Text="From:" FontWeight="Bold" />
+                    <TextBlock Text="{Binding From}" />
+                    <TextBlock Text=" - " />
+                    <TextBlock Text="{Binding Subject}" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.DataTemplates>
+            </ListBox>
+          </TabItem>
+
+          <TabItem Header="Other">
+            <Label Content="(Empty)" FontStyle="Italic" />
+          </TabItem>
+        </TabControl>
+      </Border>
+    </Grid>
   </Grid>
 </UserControl>

@@ -6,7 +6,6 @@
     <BaseOutputPath>..\..\output</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
   <ItemGroup>
@@ -17,6 +16,7 @@
     <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SampleApp.Services\SampleApp.Services.csproj" />
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />
   </ItemGroup>
 </Project>

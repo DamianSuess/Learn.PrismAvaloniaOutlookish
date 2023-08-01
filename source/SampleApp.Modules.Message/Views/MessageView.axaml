@@ -4,7 +4,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:CompileBindings="True"
+             x:DataType="vm:MessageViewModel"
              x:Class="SampleApp.Modules.Message.Views.MessageView">
   <StackPanel>
     <TextBlock Text="{Binding Greeting}"

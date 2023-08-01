@@ -6,7 +6,6 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:vm="using:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="200"
-        prism:ViewModelLocator.AutoWireViewModel="True"
         x:Class="SampleApp.Views.MainWindow"
         x:Name="MainShellWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -30,15 +29,19 @@
       </DockPanel>
     </Grid>
 
-    <Grid Grid.Row="1">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="3*" />
-        <ColumnDefinition Width="1*" />
-      </Grid.ColumnDefinitions>
+    <Grid Grid.Row="1" ColumnDefinitions="Auto, 3*, 1*">
       <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.LeftRegion}" Background="LightGray" />
       <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" Background="Gray" />
       <ContentControl Grid.Column="2" prism:RegionManager.RegionName="{x:Static core:RegionNames.RightRegion}" Background="LightGray" />
+
+      <GridSplitter CornerRadius="2"
+                    Grid.Column="2"
+                    BorderThickness="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Stretch"
+                    Margin="-3,2"
+                    Background="Gainsboro"
+                    BorderBrush="Gray" />
     </Grid>
 
     <StackPanel Grid.Row="2"
