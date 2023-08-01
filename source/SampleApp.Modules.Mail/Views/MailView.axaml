@@ -24,31 +24,11 @@
     
     <Grid Grid.Row="1">
       <Border Grid.Column="0" Classes="ControlBorder">
-
-        <TabControl>
-          <TabItem Header="Focused">
-            <ListBox Margin="2"
-                     Items="{Binding MailMessages}"
-                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                     ScrollViewer.VerticalScrollBarVisibility="Visible"
-                     SelectionMode="Single">
-              <ListBox.DataTemplates>
-                <DataTemplate>
-                  <StackPanel Orientation="Horizontal" Spacing="5">
-                    <TextBlock Text="From:" FontWeight="Bold" />
-                    <TextBlock Text="{Binding From}" />
-                    <TextBlock Text=" - " />
-                    <TextBlock Text="{Binding Subject}" />
-                  </StackPanel>
-                </DataTemplate>
-              </ListBox.DataTemplates>
-            </ListBox>
-          </TabItem>
-
-          <TabItem Header="Other">
-            <Label Content="(Empty)" FontStyle="Italic" />
-          </TabItem>
-        </TabControl>
+        <TabControl Margin="5"
+                    prism:RegionManager.RegionName="MailTabRegion"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    BorderThickness="1" />
       </Border>
     </Grid>
   </Grid>

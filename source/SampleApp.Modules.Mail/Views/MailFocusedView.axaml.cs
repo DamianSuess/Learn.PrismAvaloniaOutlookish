@@ -3,9 +3,9 @@ using Avalonia.Markup.Xaml;
 
 namespace SampleApp.Modules.Mail.Views;
 
-public partial class MailView : UserControl
+public partial class MailFocusedView : UserControl
 {
-  public MailView()
+  public MailFocusedView()
   {
     InitializeComponent();
   }
