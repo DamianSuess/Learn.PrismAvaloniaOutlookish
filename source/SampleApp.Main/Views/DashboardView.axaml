@@ -3,17 +3,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+             xmlns:vm="using:SampleApp.ViewModels"
              x:Class="SampleApp.Views.DashboardView"
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             x:CompileBindings="True"
+             x:DataType="vm:DashboardViewModel"
+             d:DesignHeight="350"
+             d:DesignWidth="600"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d">
   <DockPanel>
-    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
       <TextBlock Text="{Binding Title}" />
       <TextBlock Text="Time to add some sample controls!" />
 
-      <Button Content="Show Mail" Command="{Binding CmdShowMail}" />
-      <Button Content="Test Notification (Coming Soon to Prism.Avalonia v8.1)"
-              Command="{Binding CmdTestNotification}"
+      <Button Command="{Binding CmdShowMail}" Content="Show Mail" />
+      <Button Command="{Binding CmdTestNotification}"
+              Content="Sample Notification Pop-up"
               IsEnabled="True" />
     </StackPanel>
   </DockPanel>
