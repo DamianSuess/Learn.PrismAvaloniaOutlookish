@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
              x:Class="SampleApp.Modules.Mail.Views.MailFocusedView"
-             x:Name="FocusedView"
              d:DesignHeight="200"
              d:DesignWidth="400"
+             Tag="Focused"
              mc:Ignorable="d">
   <ListBox Margin="2"
            Items="{Binding MailMessages}"
