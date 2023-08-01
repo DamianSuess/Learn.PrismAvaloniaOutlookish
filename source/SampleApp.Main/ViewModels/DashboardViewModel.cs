@@ -23,7 +23,7 @@ public class DashboardViewModel : ViewModelBase
     Title = "Dashboard - No New Messages";
   }
 
-  public DelegateCommand CmdShowMail => new DelegateCommand(() =>
+  public DelegateCommand CmdShowMail => new(() =>
   {
     // Both methods work.
     //  The 'GoBack' uses journaling, however if it is not possible
@@ -34,7 +34,7 @@ public class DashboardViewModel : ViewModelBase
       _regionManager.RequestNavigate(RegionNames.ContentRegion, "MailView");
   });
 
-  public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
+  public DelegateCommand CmdTestNotification => new(() =>
   {
     var dialogMsg = "You clicked the Notification :)";
 
@@ -42,7 +42,7 @@ public class DashboardViewModel : ViewModelBase
     _notificationService.Show("Hello 2", "I'm from DI Service!", () =>
     {
       _dialogService.ShowDialog(
-        nameof(NoticeDialogView),
+        nameof(MessageBoxView),
         new DialogParameters($"message={dialogMsg}"),
         _ => { });
     });
@@ -50,7 +50,7 @@ public class DashboardViewModel : ViewModelBase
     // Method 2 - Static Class
     ////SampleApp.Helpers.NotificationHelpers.Show("Hello", "Im a message", () =>
     ////{
-    ////  _dialogService.ShowDialog(nameof(NoticeDialogView));
+    ////  _dialogService.ShowDialog(nameof(MessageBoxView));
     ////});
   });
 

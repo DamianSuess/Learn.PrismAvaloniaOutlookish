@@ -5,14 +5,14 @@ using Prism.Services.Dialogs;
 
 namespace SampleApp.ViewModels;
 
-public class NoticeDialogViewModel : BindableBase, IDialogAware
+public class MessageBoxViewModel : BindableBase, IDialogAware
 {
   private int _maxHeight;
   private int _maxWidth;
   private string _message = "This feature is not implemented";
   private string _title = "Notice";
 
-  public NoticeDialogViewModel()
+  public MessageBoxViewModel()
   {
     Title = "Notice";
 

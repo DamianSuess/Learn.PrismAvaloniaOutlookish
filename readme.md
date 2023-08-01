@@ -121,7 +121,7 @@ public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
   {
     // Some action to take when the Notification is clicked
     //  i.e.
-    // _dialogService.ShowDialog(nameof(NoticeDialogView));
+    // _dialogService.ShowDialog(nameof(MessageBoxView));
   });
 });
 ```

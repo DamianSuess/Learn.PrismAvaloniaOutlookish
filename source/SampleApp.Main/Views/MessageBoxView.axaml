@@ -8,7 +8,7 @@
              MaxWidth="{Binding MaxWidth}"
              Height="200" Width="400"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="200"
-             x:Class="SampleApp.Views.NoticeDialogView">
+             x:Class="SampleApp.Views.MessageBoxView">
   <UserControl.Styles>
     <Style Selector="TextBox">
       <Setter Property="BorderThickness" Value="0" />

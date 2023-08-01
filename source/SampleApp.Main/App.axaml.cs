@@ -62,7 +62,7 @@ namespace SampleApp
       containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 
       // Views - Dialogs
-      containerRegistry.RegisterDialog<NoticeDialogView, NoticeDialogViewModel>();
+      containerRegistry.RegisterDialog<MessageBoxView, MessageBoxViewModel>();
 
       // Views - Generic
       containerRegistry.Register<MainWindow>();

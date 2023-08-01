@@ -58,7 +58,7 @@ public class MainWindowViewModel : ViewModelBase
     var messg = $"You clicked the {param} button";
 
     _dialogService.ShowDialog(
-      nameof(NoticeDialogView),
+      nameof(MessageBoxView),
       new DialogParameters($"title={title}&message={messg}"),
       result => { });
   });
