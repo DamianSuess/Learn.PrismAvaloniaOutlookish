@@ -24,8 +24,8 @@
     <ProjectReference Include="..\SampleApp.Modules.Message\SampleApp.Modules.Message.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\NoticeDialogView.axaml.cs">
-      <DependentUpon>NoticeDialogView.axaml</DependentUpon>
+    <Compile Update="Views\MessageBoxView.axaml.cs">
+      <DependentUpon>MessageBoxView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

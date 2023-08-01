@@ -15,9 +15,12 @@ The screenshot below shows usage of the Prism's Region Manager, Modules, Dialogs
 
 This project uses the following technologies:
 
+* .NET 6
 * [Avalonia](https://github.com/AvaloniaUI/Avalonia)
 * [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
-* .NET 5
+  * **Dialog Service** as a Message Box
+  * **Notification** pop-ups
+  * **Prism Modules**
 * WSL 2 - _with X11 rendering on Windows_
 * [CodeDevOps](https://github.com/xenoinc/CodeDevOps) - _.NET code styling ruleset_.
 
@@ -118,7 +121,7 @@ public DelegateCommand CmdTestNotification => new DelegateCommand(() =>
   {
     // Some action to take when the Notification is clicked
     //  i.e.
-    // _dialogService.ShowDialog(nameof(NoticeDialogView));
+    // _dialogService.ShowDialog(nameof(MessageBoxView));
   });
 });
 ```

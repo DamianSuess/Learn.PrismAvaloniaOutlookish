@@ -3,9 +3,9 @@ using Avalonia.Markup.Xaml;
 
 namespace SampleApp.Views
 {
-  public partial class NoticeDialogView : UserControl
+  public partial class MessageBoxView : UserControl
   {
-    public NoticeDialogView()
+    public MessageBoxView()
     {
       InitializeComponent();
     }

@@ -1,14 +1,13 @@
 ﻿using System;
 using Avalonia.Controls;
 
-namespace SampleApp.Services
+namespace SampleApp.Services;
+
+public interface INotificationService
 {
-  public interface INotificationService
-  {
-    int NotificationTimeout { get; set; }
+  int NotificationTimeout { get; set; }
 
-    void SetHostWindow(Window window);
+  void SetHostWindow(Window window);
 
-    void Show(string title, string message, Action? onClick = null);
-  }
+  void Show(string title, string message, Action? onClick = null);
 }
