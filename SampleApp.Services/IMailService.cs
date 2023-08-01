@@ -1,7 +1,6 @@
-using System.Collections.Generic;
-using SampleApp.Modules.Mail.Models;
+﻿using SampleApp.Common.Models;
 
-namespace SampleApp.Modules.Mail.Services;
+namespace SampleApp.Services;
 
 public interface IMailService
 {

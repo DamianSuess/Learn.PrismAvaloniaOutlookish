@@ -17,9 +17,9 @@
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,*">
 
-    <StackPanel>
+    <StackPanel Orientation="Horizontal" Spacing="5">
       <Button Command="{Binding CommandShowDashboard}" Content="&lt; Dashboard" />
-      <Label Content="{Binding Greeting}" FontWeight="Bold" />
+      <Label Content="{Binding Greeting}" FontWeight="Bold" VerticalAlignment="Center" />
     </StackPanel>
     
     <Grid Grid.Row="1">

@@ -2,8 +2,8 @@
 using Prism.Commands;
 using Prism.Regions;
 using SampleApp.Common;
-using SampleApp.Modules.Mail.Models;
-using SampleApp.Modules.Mail.Services;
+using SampleApp.Common.Models;
+using SampleApp.Services;
 
 namespace SampleApp.Modules.Mail.ViewModels;
 
