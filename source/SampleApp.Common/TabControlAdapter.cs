@@ -7,8 +7,9 @@ using Prism.Regions;
 namespace SampleApp.Common;
 
 /// <summary>
-///   Tab Control Adapter for hooking a UserControl as a TabItem
-///   * Tab Header: UserControl's `Tag` property 
+/// Adapts TabControl's TabItem (content control) to a Prism Region.
+/// Tab Control Adapter for hooking tabs to regions. a UserControl as a TabItem
+///   * Tab Header: UserControl's `Tag` property
 /// </summary>
 public class TabControlAdapter : RegionAdapterBase<TabControl>
 {
@@ -26,25 +27,21 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
 
     regionTarget.SelectionChanged += (object s, SelectionChangedEventArgs e) =>
     {
-      ////// The view navigating away from
-      ////foreach (TabItem item in e.RemovedItems)
-      ////{
-      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (View) " + item.Content);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (ViMd) " + item.DataContext);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (Tag)  " + item.Tag);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (Name) " + item.Name);
-      ////  //// region.Deactivate(item);
-      ////}
-      ////
-      ////// The view navigating to
-      ////// NOTE: Fails when a ListBox item is selected.. it's not a TabItem
-      ////foreach (TabItem item in e.AddedItems)
-      ////{
-      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (View) " + item.Content);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (ViMd) " + item.DataContext);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (Tag)  " + item.Tag);
-      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (Name) " + item.Name);        ////region.Activate(item);
-      ////}
+      // The view navigating away from
+      foreach (var item in e.RemovedItems)
+      {
+        // NOTE: The selected item isn't always a TabItem, if the region contains
+        //       a ListBox, it's SelecitonChange gets picked up.
+        TargetSelectionChanged("Deactivating", item);
+        //// region.Deactivate(item);
+      }
+
+      // The view navigating to
+      foreach (var item in e.AddedItems)
+      {
+        TargetSelectionChanged("Activating", item);
+        ////region.Activate(item);
+      }
     };
 
     region.Views.CollectionChanged += (s, e) =>
@@ -76,4 +73,18 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
   }
 
   protected override IRegion CreateRegion() => new SingleActiveRegion();
+
+  private void TargetSelectionChanged(string changeAction, object itemChanged)
+  {
+    // The selected item isn't always a TabItem.
+    // In some cases, it could be the Region's ListBox item
+
+    TabItem item = itemChanged as TabItem;
+    if (item is null)
+      return;
+
+    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (Header):    " + item.Header);
+    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (View):      " + item.Content);
+    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (ViewModel): " + item.DataContext);
+  }
 }

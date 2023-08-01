@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Prism;
-using Prism.Regions;
 using SampleApp.Common;
 using SampleApp.Common.Models;
 using SampleApp.Services;
@@ -19,14 +18,10 @@ public class MailFocusedViewModel : ViewModelBase, IActiveAware
     MailMessages = new ObservableCollection<MailMessage>(_mailService.Messages);
   }
 
-  public event EventHandler IsActiveChanged;
+  public event EventHandler? IsActiveChanged;
 
-  /// <summary>This never gets hit, Xamarin.Forms only..</summary>
-  public bool IsActive
-  {
-    get => _isActive;
-    set => SetProperty(ref _isActive, value, RaiseIsActiveChanged);
-  }
+  /// <summary>Xamarin.Forms only, this never gets hit.</summary>
+  public bool IsActive { get => _isActive; set => SetProperty(ref _isActive, value, RaiseIsActiveChanged);}
 
   public ObservableCollection<MailMessage> MailMessages { get; private set; }
 
