@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="clr-namespace:SampleApp.Common;assembly=SampleApp.Common"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
@@ -19,36 +20,18 @@
 
     <StackPanel Orientation="Horizontal" Spacing="5">
       <Button Command="{Binding CommandShowDashboard}" Content="&lt; Dashboard" />
-      <Label Content="{Binding Greeting}" FontWeight="Bold" VerticalAlignment="Center" />
+      <Label VerticalAlignment="Center"
+             Content="{Binding Greeting}"
+             FontWeight="Bold" />
     </StackPanel>
-    
+
     <Grid Grid.Row="1">
       <Border Grid.Column="0" Classes="ControlBorder">
-
-        <TabControl>
-          <TabItem Header="Focused">
-            <ListBox Margin="2"
-                     Items="{Binding MailMessages}"
-                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                     ScrollViewer.VerticalScrollBarVisibility="Visible"
-                     SelectionMode="Single">
-              <ListBox.DataTemplates>
-                <DataTemplate>
-                  <StackPanel Orientation="Horizontal" Spacing="5">
-                    <TextBlock Text="From:" FontWeight="Bold" />
-                    <TextBlock Text="{Binding From}" />
-                    <TextBlock Text=" - " />
-                    <TextBlock Text="{Binding Subject}" />
-                  </StackPanel>
-                </DataTemplate>
-              </ListBox.DataTemplates>
-            </ListBox>
-          </TabItem>
-
-          <TabItem Header="Other">
-            <Label Content="(Empty)" FontStyle="Italic" />
-          </TabItem>
-        </TabControl>
+        <TabControl prism:RegionManager.RegionName="{x:Static core:RegionNames.MailTabRegion}"
+                    Margin="5"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    BorderThickness="1" />
       </Border>
     </Grid>
   </Grid>

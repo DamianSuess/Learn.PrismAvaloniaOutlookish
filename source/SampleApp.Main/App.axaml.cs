@@ -42,6 +42,7 @@ namespace SampleApp
       base.ConfigureRegionAdapterMappings(regionAdapterMappings);
       regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
       regionAdapterMappings.RegisterMapping(typeof(Grid), Container.Resolve<GridRegionAdapter>());
+      regionAdapterMappings.RegisterMapping(typeof(TabControl), Container.Resolve<TabControlAdapter>());
     }
 
     protected override IAvaloniaObject CreateShell()
@@ -68,6 +69,7 @@ namespace SampleApp
       containerRegistry.Register<MainWindow>();
       containerRegistry.Register<StackPanelRegionAdapter>();
       containerRegistry.Register<GridRegionAdapter>();
+      ////containerRegistry.Register<TabControlAdapter>();
 
       // Views - Region Navigation
       containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();

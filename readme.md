@@ -21,6 +21,7 @@ This project uses the following technologies:
   * **Dialog Service** as a Message Box
   * **Notification** pop-ups
   * **Prism Modules**
+  * **TabControlAdapter** - _Register a View as a TabItem using Prism's Region Navigation_
   * Exiting the main window in 2 flavors
 * WSL 2 - _with X11 rendering on Windows_
   * Execute using either Windows or Linux via WSL

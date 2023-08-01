@@ -13,7 +13,13 @@ public class MailModule : IModule
   public void OnInitialized(IContainerProvider containerProvider)
   {
     var regionManager = containerProvider.Resolve<IRegionManager>();
+    
+    // Main Window's Content Region
     regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(MailView));
+    
+    // Mail Module's Tab Region
+    regionManager.RegisterViewWithRegion(RegionNames.MailTabRegion, typeof(MailFocusedView));
+    regionManager.RegisterViewWithRegion(RegionNames.MailTabRegion, typeof(MailOtherView));
   }
 
   public void RegisterTypes(IContainerRegistry containerRegistry)

@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
+             x:Class="SampleApp.Modules.Mail.Views.MailFocusedView"
+             d:DesignHeight="200"
+             d:DesignWidth="400"
+             Tag="Focused"
+             mc:Ignorable="d">
+  <ListBox Margin="2"
+           Items="{Binding MailMessages}"
+           ScrollViewer.HorizontalScrollBarVisibility="Visible"
+           ScrollViewer.VerticalScrollBarVisibility="Visible"
+           SelectionMode="Single">
+    <ListBox.DataTemplates>
+      <DataTemplate>
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBlock Text="From:" FontWeight="Bold" />
+          <TextBlock Text="{Binding From}" />
+          <TextBlock Text=" - " />
+          <TextBlock Text="{Binding Subject}" />
+        </StackPanel>
+      </DataTemplate>
+    </ListBox.DataTemplates>
+  </ListBox>
+</UserControl>

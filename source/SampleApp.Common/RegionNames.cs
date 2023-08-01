@@ -1,17 +1,19 @@
-﻿namespace SampleApp.Common
+﻿namespace SampleApp.Common;
+
+public static class RegionNames
 {
-  public static class RegionNames
-  {
-    /// <summary>Main Window's Footer Status Bar.</summary>
-    public const string FooterRegion = "FooterRegion";
+  /// <summary>Main Window's Footer Status Bar.</summary>
+  public const string FooterRegion = "FooterRegion";
 
-    /// <summary>Left Side Bar.</summary>
-    public const string LeftRegion = "LeftRegion";
+  /// <summary>Left Side Bar.</summary>
+  public const string LeftRegion = "LeftRegion";
 
-    /// <summary>Main Window's content region</summary>
-    public const string ContentRegion = "ContentRegion";
+  /// <summary>Main Window's content region.</summary>
+  public const string ContentRegion = "ContentRegion";
 
-    /// <summary>Right Side Bar.</summary>
-    public const string RightRegion = "RightRegion";
-  }
+  /// <summary>Mail module tab region.</summary>
+  public const string MailTabRegion = "MailTabRegion";
+
+  /// <summary>Right Side Bar.</summary>
+  public const string RightRegion = "RightRegion";
 }
