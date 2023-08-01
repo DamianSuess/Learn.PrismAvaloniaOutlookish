@@ -1,17 +1,16 @@
 ﻿using Prism.Regions;
 using SampleApp.Common;
 
-namespace SampleApp.ViewModels
+namespace SampleApp.ViewModels;
+
+public class SettingsViewModel : ViewModelBase
 {
-  public class SettingsViewModel : ViewModelBase
+  private IRegionManager _regionManager;
+
+  public SettingsViewModel(IRegionManager regionManager)
   {
-    private IRegionManager _regionManager;
+    _regionManager = regionManager;
 
-    public SettingsViewModel(IRegionManager regionManager)
-    {
-      _regionManager = regionManager;
-
-      Title = "Settings";
-    }
+    Title = "Settings";
   }
 }

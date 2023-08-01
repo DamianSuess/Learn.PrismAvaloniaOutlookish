@@ -5,29 +5,28 @@ using SampleApp.Common;
 using SampleApp.Modules.Mail.Models;
 using SampleApp.Modules.Mail.Services;
 
-namespace SampleApp.Modules.Mail.ViewModels
+namespace SampleApp.Modules.Mail.ViewModels;
+
+public class MailViewModel : ViewModelBase
 {
-  public class MailViewModel : ViewModelBase
+  private IMailService _mailService;
+  private IRegionManager _regionManager;
+
+  public MailViewModel(IMailService mailService, IRegionManager regionManager)
   {
-    private IMailService _mailService;
-    private IRegionManager _regionManager;
+    _regionManager = regionManager;
+    _mailService = mailService;
+    MailMessages = new ObservableCollection<MailMessage>(_mailService.Messages);
+  }
 
-    public MailViewModel(IMailService mailService, IRegionManager regionManager)
-    {
-      _regionManager = regionManager;
-      _mailService = mailService;
-      MailMessages = new ObservableCollection<MailMessage>(_mailService.Messages);
-    }
+  public DelegateCommand CommandShowDashboard => new(OnShowDashboard);
 
-    public DelegateCommand CommandShowDashboard => new DelegateCommand(OnShowDashboard);
+  public string Greeting => "Mail Region";
 
-    public string Greeting => "Mail Region";
+  public ObservableCollection<MailMessage> MailMessages { get; private set; }
 
-    public ObservableCollection<MailMessage> MailMessages { get; private set; }
-
-    private void OnShowDashboard()
-    {
-      _regionManager.RequestNavigate(RegionNames.ContentRegion, "DashboardView");
-    }
+  private void OnShowDashboard()
+  {
+    _regionManager.RequestNavigate(RegionNames.ContentRegion, "DashboardView");
   }
 }

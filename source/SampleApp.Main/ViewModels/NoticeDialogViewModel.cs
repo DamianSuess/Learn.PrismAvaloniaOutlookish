@@ -3,55 +3,72 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 
-namespace SampleApp.ViewModels
+namespace SampleApp.ViewModels;
+
+public class NoticeDialogViewModel : BindableBase, IDialogAware
 {
-  public class NoticeDialogViewModel : BindableBase, IDialogAware
+  private int _maxHeight;
+  private int _maxWidth;
+  private string _message = "This feature is not implemented";
+  private string _title = "Notice";
+
+  public NoticeDialogViewModel()
   {
-    private string _title = "";
-    private string _message = "This feature is not implemented";
+    Title = "Notice";
 
-    public NoticeDialogViewModel()
-    {
-      Title = "Notice";
-    }
+    MaxHeight = 800;
+    MaxWidth = 600;
+  }
 
-    public event Action<IDialogResult>? RequestClose;
+  public event Action<IDialogResult>? RequestClose;
 
-    public DelegateCommand<string> CmdResult => new DelegateCommand<string>((param) =>
-    {
-      RaiseRequestClose(new DialogResult(ButtonResult.OK));
-    });
+  public DelegateCommand<string> CmdResult => new((string buttonResult) =>
+  {
+    // Dialog's ButtonResult types:
+    // None = 0
+    // OK = 1
+    // Cancel = 2
+    // Abort = 3
+    // Retry = 4
+    // Ignore = 5
+    // Yes = 6
+    // No = 7
+    ButtonResult result = ButtonResult.OK;
 
-    public string Message
-    {
-      get => _message;
-      set => SetProperty(ref _message, value);
-    }
+    if (int.TryParse(buttonResult, out int intResult))
+      result = (ButtonResult)intResult;
 
-    public string Title
-    {
-      get => _title;
-      set => SetProperty(ref _title, value);
-    }
+    RaiseRequestClose(new DialogResult(result));
+  });
 
-    public bool CanCloseDialog()
-    {
-      return true;
-    }
+  public int MaxHeight { get => _maxHeight; set => SetProperty(ref _maxHeight, value); }
 
-    public void OnDialogClosed()
-    {
-    }
+  public int MaxWidth { get => _maxWidth; set => SetProperty(ref _maxWidth, value); }
 
-    public void OnDialogOpened(IDialogParameters parameters)
-    {
-      // Title = parameters.GetValue<string>("title");
-      Message = parameters.GetValue<string>("message");
-    }
+  public string Message { get => _message; set => SetProperty(ref _message, value); }
 
-    public virtual void RaiseRequestClose(IDialogResult dialogResult)
-    {
-      RequestClose?.Invoke(dialogResult);
-    }
+  public string Title { get => _title; set => SetProperty(ref _title, value); }
+
+  public bool CanCloseDialog()
+  {
+    return true;
+  }
+
+  public void OnDialogClosed()
+  {
+  }
+
+  public void OnDialogOpened(IDialogParameters parameters)
+  {
+    var title = parameters.GetValue<string>("title");
+    if (!string.IsNullOrEmpty(title))
+      Title = title;
+
+    Message = parameters.GetValue<string>("message");
+  }
+
+  public virtual void RaiseRequestClose(IDialogResult dialogResult)
+  {
+    RequestClose?.Invoke(dialogResult);
   }
 }
