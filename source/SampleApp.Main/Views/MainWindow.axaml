@@ -17,7 +17,7 @@
       <DockPanel>
         <Menu DockPanel.Dock="Top">
           <MenuItem Header="_File">
-            <MenuItem Header="_Open..." Command="{Binding CmdNotImplemented}" CommandParameter="Open" />
+            <MenuItem Header="_Open..." Command="{Binding CmdShowDialog}" CommandParameter="Open" />
             <Separator />
             <MenuItem Header="_Exit via App Shutdown" Command="{Binding CmdMenuExitAppLifetime}" />
             <MenuItem Header="_Exit via Window" Command="{Binding CmdMenuExitWindow}" CommandParameter="{Binding ElementName=MainShellWindow}" />
