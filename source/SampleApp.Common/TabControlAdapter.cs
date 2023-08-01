@@ -7,7 +7,12 @@ using Prism.Regions;
 namespace SampleApp.Common;
 
 /// <summary>
-/// Adapts TabControl's TabItem (content control) to a Prism Region.
+/// Adapts TabControl's TabItem (content control) to a Prism Region
+/// so that you can hook Regions to the TabControl in XAML.
+/// <code><![CDATA[
+///   <TabControl prism:RegionManager.RegionName="MailTabRegion" />
+/// ]]></code>
+/// 
 /// Tab Control Adapter for hooking tabs to regions. a UserControl as a TabItem
 ///   * Tab Header: UserControl's `Tag` property
 /// </summary>
@@ -25,6 +30,7 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     if (regionTarget == null)
       throw new ArgumentNullException(nameof(regionTarget));
 
+    // Detect a Tab Selection Changed
     regionTarget.SelectionChanged += (object s, SelectionChangedEventArgs e) =>
     {
       // The view navigating away from
@@ -44,6 +50,7 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
       }
     };
 
+    // Detect when a TabItem has been added/removed to the TabControl
     region.Views.CollectionChanged += (s, e) =>
     {
       if (e.Action == NotifyCollectionChangedAction.Add)
@@ -72,6 +79,11 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     };
   }
 
+  /// <summary>
+  ///   AllActiveRegion    - Can have multiple active views at the same time (i.e. multi-window views)
+  ///   SingleActiveRegion - There is only one view active at a time. (i.e. Tab)
+  /// </summary>
+  /// <returns>Region</returns>
   protected override IRegion CreateRegion() => new SingleActiveRegion();
 
   private void TargetSelectionChanged(string changeAction, object itemChanged)
