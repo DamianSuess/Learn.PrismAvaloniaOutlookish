@@ -22,6 +22,7 @@ This project uses the following technologies:
   * **Notification** pop-ups
   * **Prism Modules**
   * **TabControlAdapter** - _Register a View as a TabItem using Prism's Region Navigation_
+    * The `UserControl` `Tag` property is used as the _TabItem's Header_
   * Exiting the main window in 2 flavors
 * WSL 2 - _with X11 rendering on Windows_
   * Execute using either Windows or Linux via WSL

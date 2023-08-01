@@ -5,7 +5,6 @@
              xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
              x:Class="SampleApp.Modules.Mail.Views.MailOtherView"
              Tag="Other Items"
-             x:Name="OtherView"
              d:DesignHeight="200"
              d:DesignWidth="400"
              mc:Ignorable="d">
