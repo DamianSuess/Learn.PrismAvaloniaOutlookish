@@ -15,11 +15,11 @@
     <None Remove="Models\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.16" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.16" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.16" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.16" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97" />
+    <PackageReference Include="Avalonia" Version="0.10.21" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.21" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.21" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />
