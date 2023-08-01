@@ -23,6 +23,8 @@
       <Label VerticalAlignment="Center"
              Content="{Binding Greeting}"
              FontWeight="Bold" />
+
+      <Label VerticalAlignment="Center" Content="{Binding SelectedTabIndex}" />
     </StackPanel>
 
     <Grid Grid.Row="1">
@@ -31,7 +33,9 @@
                     Margin="5"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    BorderThickness="1" />
+                    BorderThickness="1"
+                    SelectedIndex="{Binding SelectedTabIndex}"
+                    SelectedItem="{Binding SelectedTabItem}" />
       </Border>
     </Grid>
   </Grid>

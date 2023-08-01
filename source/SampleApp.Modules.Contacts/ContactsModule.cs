@@ -4,18 +4,17 @@ using Prism.Regions;
 using SampleApp.Common;
 using SampleApp.Modules.Contacts.Views;
 
-namespace SampleApp.Modules.Contacts
-{
-  public class ContactsModule : IModule
-  {
-    public void OnInitialized(IContainerProvider containerProvider)
-    {
-      var regionManager = containerProvider.Resolve<IRegionManager>();
-      regionManager.RegisterViewWithRegion(RegionNames.RightRegion, typeof(ContactsView));
-    }
+namespace SampleApp.Modules.Contacts;
 
-    public void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-    }
+public class ContactsModule : IModule
+{
+  public void OnInitialized(IContainerProvider containerProvider)
+  {
+    var regionManager = containerProvider.Resolve<IRegionManager>();
+    regionManager.RegisterViewWithRegion(RegionNames.RightRegion, typeof(ContactsView));
+  }
+
+  public void RegisterTypes(IContainerRegistry containerRegistry)
+  {
   }
 }

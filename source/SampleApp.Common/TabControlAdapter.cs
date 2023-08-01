@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.Linq;
 using Avalonia.Controls;
 using Prism.Regions;
@@ -17,6 +18,35 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
 
   protected override void Adapt(IRegion region, TabControl regionTarget)
   {
+    if (region == null)
+      throw new ArgumentNullException(nameof(region));
+
+    if (regionTarget == null)
+      throw new ArgumentNullException(nameof(regionTarget));
+
+    regionTarget.SelectionChanged += (object s, SelectionChangedEventArgs e) =>
+    {
+      ////// The view navigating away from
+      ////foreach (TabItem item in e.RemovedItems)
+      ////{
+      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (View) " + item.Content);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (ViMd) " + item.DataContext);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (Tag)  " + item.Tag);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Deactivating (Name) " + item.Name);
+      ////  //// region.Deactivate(item);
+      ////}
+      ////
+      ////// The view navigating to
+      ////// NOTE: Fails when a ListBox item is selected.. it's not a TabItem
+      ////foreach (TabItem item in e.AddedItems)
+      ////{
+      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (View) " + item.Content);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (ViMd) " + item.DataContext);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (Tag)  " + item.Tag);
+      ////  System.Diagnostics.Debug.WriteLine("Tab Activating (Name) " + item.Name);        ////region.Activate(item);
+      ////}
+    };
+
     region.Views.CollectionChanged += (s, e) =>
     {
       if (e.Action == NotifyCollectionChangedAction.Add)

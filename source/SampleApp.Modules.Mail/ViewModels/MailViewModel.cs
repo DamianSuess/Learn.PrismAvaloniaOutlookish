@@ -1,29 +1,29 @@
-﻿using System.Collections.ObjectModel;
+﻿using Avalonia.Controls;
 using Prism.Commands;
 using Prism.Regions;
 using SampleApp.Common;
-using SampleApp.Common.Models;
 using SampleApp.Services;
 
 namespace SampleApp.Modules.Mail.ViewModels;
 
 public class MailViewModel : ViewModelBase
 {
-  private IMailService _mailService;
   private IRegionManager _regionManager;
+  private int _selectedTabIndex;
+  private TabItem _selectedTabItem;
 
   public MailViewModel(IMailService mailService, IRegionManager regionManager)
   {
     _regionManager = regionManager;
-    _mailService = mailService;
-    MailMessages = new ObservableCollection<MailMessage>(_mailService.Messages);
   }
 
   public DelegateCommand CommandShowDashboard => new(OnShowDashboard);
 
   public string Greeting => "Mail Region";
 
-  public ObservableCollection<MailMessage> MailMessages { get; private set; }
+  public int SelectedTabIndex { get => _selectedTabIndex; set => SetProperty(ref _selectedTabIndex, value); }
+
+  public TabItem SelectedTabItem { get => _selectedTabItem; set => SetProperty(ref _selectedTabItem, value); }
 
   private void OnShowDashboard()
   {
