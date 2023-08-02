@@ -11,6 +11,10 @@ The screenshot below shows usage of the Prism's Region Manager, Modules, Dialogs
 
 ![Screen Shot](Sample-Outlookish-Annotated.png)
 
+## Contributing
+
+We'd love to see this grow. Check out the [Outlook'ish Wiki](https://github.com/DamianSuess/Learn.PrismAvaloniaOutlookish/wiki) for more info
+
 ## Tech Stack
 
 This project uses the following technologies:

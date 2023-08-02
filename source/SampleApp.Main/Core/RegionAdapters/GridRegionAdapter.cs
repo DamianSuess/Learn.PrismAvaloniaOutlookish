@@ -21,6 +21,7 @@ namespace SampleApp.Main.Core.RegionAdapters
             regionTarget.Children.Add(item);
           }
         }
+
         if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
         {
           foreach (IControl item in e.OldItems)
