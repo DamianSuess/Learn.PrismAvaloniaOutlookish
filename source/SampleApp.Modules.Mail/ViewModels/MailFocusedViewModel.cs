@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Prism;
+using Prism.Commands;
 using SampleApp.Common;
 using SampleApp.Common.Models;
 using SampleApp.Services;
@@ -22,6 +23,11 @@ public class MailFocusedViewModel : ViewModelBase, IActiveAware
 
   /// <summary>Xamarin.Forms only, this never gets hit.</summary>
   public bool IsActive { get => _isActive; set => SetProperty(ref _isActive, value, RaiseIsActiveChanged);}
+
+  public DelegateCommand CmdTabClicked => new(() =>
+  {
+    System.Diagnostics.Debug.WriteLine("Tab clicked?");
+  });
 
   public ObservableCollection<MailMessage> MailMessages { get; private set; }
 

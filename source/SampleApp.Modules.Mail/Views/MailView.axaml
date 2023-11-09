@@ -6,6 +6,8 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:SampleApp.Modules.Mail.ViewModels"
              x:Class="SampleApp.Modules.Mail.Views.MailView"
+             x:CompileBindings="True"
+             x:DataType="vm:MailViewModel"
              prism:ViewModelLocator.AutoWireViewModel="True">
   <UserControl.Styles>
     <Style Selector="Border.ControlBorder">
