@@ -16,12 +16,12 @@
     <None Remove="Models\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.5" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11000" />
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Diagnostics" />
+    <PackageReference Include="Avalonia.ReactiveUI" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Prism.Avalonia" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj" />

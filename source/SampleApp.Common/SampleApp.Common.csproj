@@ -7,11 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.5" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11000" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11000" />
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Prism.Avalonia" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" />
   </ItemGroup>
 
 </Project>
