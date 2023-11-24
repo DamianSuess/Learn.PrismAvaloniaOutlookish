@@ -1,4 +1,4 @@
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Prism.Ioc;
@@ -45,7 +45,7 @@ public class App : PrismApplication
     regionAdapterMappings.RegisterMapping(typeof(TabControl), Container.Resolve<TabControlAdapter>());
   }
 
-  protected override IAvaloniaObject CreateShell()
+  protected override AvaloniaObject CreateShell()
   {
     return this.Container.Resolve<MainWindow>();
   }
