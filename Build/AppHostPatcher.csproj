@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+    <IsDotNetFramework>false</IsDotNetFramework>
+    <IsDotNet>false</IsDotNet>
+    <IsSelfContainedDotNet>false</IsSelfContainedDotNet>
+    <IsDotNetFramework Condition=" $(TargetFramework.StartsWith(net4)) ">true</IsDotNetFramework>
+    <IsDotNet Condition=" !$(TargetFramework.StartsWith(net4)) ">true</IsDotNet>
+    <IsSelfContainedDotNet Condition=" '$(IsDotNet)' == 'true' ">true</IsSelfContainedDotNet>
+    <Features>strict;nullablePublicOnly</Features>
+    <LangVersion>latest</LangVersion>
+
+    <!-- Allow compiling for windows on non-windows platforms -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <!-- Enable Visual Studio Build Acceleration -->
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <Nullable>enable</Nullable>
+
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+</Project>
