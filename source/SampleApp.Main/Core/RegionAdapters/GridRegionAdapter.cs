@@ -1,4 +1,4 @@
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Prism.Regions;
 
 namespace SampleApp.Main.Core.RegionAdapters
@@ -16,14 +16,15 @@ namespace SampleApp.Main.Core.RegionAdapters
       {
         if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
         {
-          foreach (IControl item in e.NewItems)
+          foreach (Control item in e.NewItems)
           {
             regionTarget.Children.Add(item);
           }
         }
+
         if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
         {
-          foreach (IControl item in e.OldItems)
+          foreach (Control item in e.OldItems)
           {
             regionTarget.Children.Remove(item);
           }

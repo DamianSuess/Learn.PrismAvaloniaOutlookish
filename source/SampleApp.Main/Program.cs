@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.ReactiveUI;
 
 namespace SampleApp
@@ -12,10 +13,6 @@ namespace SampleApp
       .With(new X11PlatformOptions {
         EnableMultiTouch = false,
         UseDBusMenu = true
-      })
-      .With(new Win32PlatformOptions {
-        EnableMultitouch = true,
-        AllowEglInitialization = true
       })
       .UseSkia()
       .UseReactiveUI()

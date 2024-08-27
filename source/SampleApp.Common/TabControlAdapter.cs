@@ -59,8 +59,9 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
         {
           var items = regionTarget.Items.Cast<TabItem>().ToList();
           items.Add(new TabItem { Header = item.Tag, Content = item });
-          regionTarget.Items = items;           // Avalonia v0.10.x
-          //// regionTarget.Items.Set(items);   // Avalonia v11
+
+          //// regionTarget.Items = items;      // Avalonia v0.10.x
+          regionTarget.ItemsSource = items;     // Avalonia v11.0
         }
       }
       else if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -68,12 +69,13 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
         foreach (UserControl item in e.OldItems)
         {
           var tabToDelete = regionTarget.Items.OfType<TabItem>().FirstOrDefault(n => n.Content == item);
-          // regionTarget.Items.Remove(tabToDelete);  // WPF
 
+          // regionTarget.Items.Remove(tabToDelete);  // WPF
           var items = regionTarget.Items.Cast<TabItem>().ToList();
           items.Remove(tabToDelete);
-          regionTarget.Items = items;
-          //// regionTarget.Items.Set(items);   // Avalonia v11
+
+          //// regionTarget.Items = items;    // Avalonia v0.10
+          regionTarget.ItemsSource = items;    // Avalonia v11
         }
       }
     };
