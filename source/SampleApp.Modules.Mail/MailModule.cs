@@ -1,6 +1,6 @@
-using Prism.Ioc;
+﻿using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using SampleApp.Common;
 using SampleApp.Modules.Mail.ViewModels;
 using SampleApp.Modules.Mail.Views;

@@ -1,6 +1,6 @@
 ﻿using Prism.Commands;
-using Prism.Regions;
-using Prism.Services.Dialogs;
+using Prism.Dialogs;
+using Prism.Navigation.Regions;
 using SampleApp.Common;
 using SampleApp.Services;
 using SampleApp.Views;
