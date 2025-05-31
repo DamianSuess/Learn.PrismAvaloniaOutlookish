@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using Prism.DryIoc;
 using SampleApp.Common;
 using SampleApp.Main.Core.RegionAdapters;

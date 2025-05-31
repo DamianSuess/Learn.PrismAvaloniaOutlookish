@@ -1,7 +1,7 @@
 ﻿using System;
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Services.Dialogs;
+using Prism.Dialogs;
 
 namespace SampleApp.ViewModels;
 
@@ -20,7 +20,7 @@ public class MessageBoxViewModel : BindableBase, IDialogAware
     MaxWidth = 600;
   }
 
-  public event Action<IDialogResult>? RequestClose;
+  public DialogCloseListener RequestClose { get; }
 
   public DelegateCommand<string> CmdResult => new((string buttonResult) =>
   {
@@ -69,6 +69,6 @@ public class MessageBoxViewModel : BindableBase, IDialogAware
 
   public virtual void RaiseRequestClose(IDialogResult dialogResult)
   {
-    RequestClose?.Invoke(dialogResult);
+    RequestClose.Invoke(dialogResult);
   }
 }

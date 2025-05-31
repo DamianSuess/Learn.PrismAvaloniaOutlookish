@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>library</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <BaseOutputPath>..\..\output</BaseOutputPath>
     <LangVersion>11.0</LangVersion>
@@ -20,7 +20,6 @@
     <PackageReference Include="Avalonia.Desktop" />
     <PackageReference Include="Avalonia.Diagnostics" />
     <PackageReference Include="Avalonia.ReactiveUI" />
-    <PackageReference Include="Avalonia.Themes.Fluent" />
     <PackageReference Include="Prism.Avalonia" />
   </ItemGroup>
   <ItemGroup>

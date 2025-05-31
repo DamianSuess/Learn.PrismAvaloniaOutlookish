@@ -2,7 +2,8 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Prism.Commands;
-using Prism.Services.Dialogs;
+//using Prism.Services.Dialogs;
+using Prism.Dialogs;
 using SampleApp.Common;
 using SampleApp.Views;
 using MenuItem = SampleApp.Main.Models.MenuItem;

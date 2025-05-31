@@ -12,8 +12,8 @@
            ItemsSource="{Binding MailMessages}"
            ScrollViewer.HorizontalScrollBarVisibility="Visible"
            ScrollViewer.VerticalScrollBarVisibility="Visible"
-           SelectionMode="Single">
-    <ListBox.DataTemplates>
+           SelectionMode="Single" >
+    <ListBox.ItemTemplate>
       <DataTemplate>
         <StackPanel Orientation="Horizontal" Spacing="5">
           <TextBlock Text="From:" FontWeight="Bold" />
@@ -22,6 +22,6 @@
           <TextBlock Text="{Binding Subject}" />
         </StackPanel>
       </DataTemplate>
-    </ListBox.DataTemplates>
+    </ListBox.ItemTemplate>
   </ListBox>
 </UserControl>

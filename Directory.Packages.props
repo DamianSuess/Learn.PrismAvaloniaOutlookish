@@ -1,12 +1,16 @@
 <Project>
+  <PropertyGroup>
+    <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.0" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.0" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11000" />
-    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageVersion Include="Avalonia" Version="11.2.8" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.2.8" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.2.8" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.2.8" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.2.8" />
+    <PackageVersion Include="Prism.Avalonia" Version="9.0.537.11130" />
+    <PackageVersion Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
+    <PackageVersion Include="Prism.Core" Version="9.0.537" />
   </ItemGroup>
 </Project>

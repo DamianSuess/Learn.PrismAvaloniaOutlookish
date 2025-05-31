@@ -1,5 +1,5 @@
 ﻿using Avalonia.Controls;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 namespace SampleApp.Main.Core.RegionAdapters
 {

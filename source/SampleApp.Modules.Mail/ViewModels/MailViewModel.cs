@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 using Prism.Commands;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using SampleApp.Common;
 using SampleApp.Services;
 
